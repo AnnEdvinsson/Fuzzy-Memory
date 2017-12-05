@@ -30,3 +30,13 @@ opacity: 0;
 transition: 1.2s ease;
 pointer-events: none;
 }
+
+
+.clicked {
+  transform: rotate(360deg);
+pointer-events: none;
+}
+
+.images_clicked {
+  opacity: 1;
+}
