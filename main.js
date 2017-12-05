@@ -1,37 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <link rel="stylesheet" href="memory.css">
-</head>
-<body>
-<div id="memory_board">
+'use strict';
+let cards = document.querySelectorAll('.card');
+// console.log(cards);
+let compareArray = []; //array där vi jämför kort
+let divArray = [];
+let matchPair = 0; //antalet matchade par
 
+let memory_board =document.querySelector('#memory_board');
 
+for (var i = memory_board.children.length; i >= 0; i--) {
+  memory_board.appendChild(memory_board.children[Math.random() * i | 0]); //randomiserar divarna
+}
 
+let comparefunc = (dataset) => {
+  // console.log(dataset);
+  console.log(divArray);
+  if(compareArray.length == 2 ) {
+    console.log('nu har du tryckt på två kort');
 
-  <div class="card" data-card="0"><img src="img/fem1.jpg" alt="">0</div>
-  <div class="card" data-card="0"><img src="img/fem1.jpg" alt="">0</div>
-  <div class="card" data-card="1"><img src="img/fem2.jpg" alt="">1</div>
-  <div class="card" data-card="1"><img src="img/fem2.jpg" alt="">1</div>
-  <div class="card" data-card="2"><img src="img/fem3.jpeg" alt="">2</div>
-  <div class="card" data-card="2"><img src="img/fem3.jpeg" alt="">2</div>
-  <div class="card" data-card="3"><img src="img/fem4.jpg" alt="">3</div>
-  <div class="card" data-card="3"><img src="img/fem4.jpg" alt="">3</div>
-  <div class="card" data-card="4"><img src="img/fem5.jpg" alt="">4</div>
-  <div class="card" data-card="4"><img src="img/fem5.jpg" alt="">4</div>
-  <div class="card" data-card="5"><img src="img/fem6.jpg" alt="">5</div>
-  <div class="card" data-card="5"><img src="img/fem6.jpg" alt="">5</div>
-  <div class="card" data-card="6"><img src="img/fem7.jpg" alt="">6</div>
-  <div class="card" data-card="6"><img src="img/fem7.jpg" alt="">6</div>
-  <div class="card" data-card="7"><img src="img/fem8.jpg" alt="">7</div>
-  <div class="card" data-card="7"><img src="img/fem8.jpg" alt="">7</div>
-</div>
+    if (compareArray[0]==compareArray[1]) {
+      console.log('match');
+      matchPair++; //lägger till 1 för varje matchande par i matchPair-variabeln.
+      console.log(matchPair);
 
+      if (matchPair == 8) { //när vi hittat alla matchande par
+        console.log('You won');
 
-<script src="main.js" charset="utf-8"></script>
-</body>
-</html>
+      }
+
+    } else {
+      console.log('no match');
+
+      setTimeout(function() {
+        divArray[0].classList.remove('clicked'); //tar bort klassen clicked på klickad div.
+        divArray[1].classList.remove('clicked');
+        divArray[0].querySelector('img').classList.remove('images_clicked')
+        divArray[1].querySelector('img').classList.remove('images_clicked')
+      }, 500)
+    }
+    compareArray = []; //tömmer arrayen efter valt två kort
+  }
+}
+
+cards.forEach((cardEach)=> {
+  // console.log(cardEach);
+
+  cardEach.addEventListener('click', (event) => {
+    let currentDiv = event.target;
+    divArray.push(currentDiv);
+      console.log(currentDiv);
+    currentDiv.classList.toggle('clicked');
+
+    let currentImg = currentDiv.querySelector('img');
+    currentImg.classList.add('images_clicked');
+
+// console.log(event.target.dataset.card);
+let currentCard = event.target.dataset.card;
+console.log(currentCard);
+let compare = compareArray.push(currentCard); //för att kunna jämföra korten. först dit jag vill skicka och inom parates det jag vill skicka
+// console.log(compareArray);
+
+return comparefunc(currentCard); 
+
+  })
+});
