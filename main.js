@@ -74,7 +74,9 @@ cards.forEach((cardEach)=> {
     // console.log(event.target.dataset.card);
     let currentCard = event.target.dataset.card;
     console.log(currentCard);
-    let compare = compareArray.push(currentCard); //för att kunna jämföra korten. först dit jag vill skicka och inom parates det jag vill skicka
+    let compare = compareArray.push(currentCard); //för att kunna jämföra korten.
+                                                  //först dit jag vill skicka och 
+                                                  //inom parates det jag vill skicka
     // console.log(compareArray);
 
     return comparefunc(currentCard);

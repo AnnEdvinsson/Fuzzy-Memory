@@ -1,12 +1,21 @@
-/*@media only screen and (max-width: 768px) {*/
+/*@media only screen and (max-width: 500px) {
+    .wrapper {
+        height: 100vh;
+        width:70vw;
+    }
+    #memory_board{
+      height: auto;
+    }
+}*/
 
-.body{
-
-}
+/*.body{
+min-height: 100%;
+}*/
 
 .wrapper{
 display: flex;
-flex-wrap: wrap;
+/*flex-wrap: wrap;*/
+flex-direction: column;
 justify-content: center;
 align-items: center;
 }
@@ -28,11 +37,19 @@ align-items: center;
   justify-content: center;
   align-items: center;
   margin: auto;
+
+  /*display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(4, 24%);
+  grid-template-rows: 24% 24% 24% 24%;
+  grid-auto-flow: column;*/
 }
 
 .card{
-  height: 24%;
-  width: 24%;
+  /*height: 24%;
+  width: 24%;*/
+  height: 100%;
+  width: 100%;
   margin: 1px;
   border-width: 1px;
   border-style: solid;
@@ -52,8 +69,8 @@ pointer-events: none;
 }
 
 .playBtn{
-margin: 1em;
-position: relative;
+margin: 2%;
+/*position: relative;*/
 
 }
 
