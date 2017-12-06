@@ -1,18 +1,18 @@
 'use strict';
-let memory_board =document.querySelector('#memory_board');
+
 let cards = document.querySelectorAll('.card');
 // console.log(cards);
 let compareArray = []; //array där vi jämför kort
 let divArray = [];
 let matchPair = 0; //antalet matchade par
 
-
+let memory_board =document.querySelector('#memory_board');
 
 function resetBoard(){
   for (var i = memory_board.children.length; i >= 0; i--) {
     memory_board.appendChild(memory_board.children[Math.random() * i | 0]); //randomiserar divarna
   }
-  cards.forEach(function(card){   //
+  cards.forEach(function(card){
   card.querySelector('img').classList.remove('images_clicked');
   card.classList.remove('clicked');
   console.log(card);
@@ -53,7 +53,7 @@ let comparefunc = (dataset) => {
         divArray[1].querySelector('img').classList.remove('images_clicked');
         compareArray = []; //tömmer arrayen efter valt två kort
         divArray = [];
-      }, 100)
+      }, 1000)
     }
     // compareArray = []; //tömmer arrayen efter valt två kort
   }
