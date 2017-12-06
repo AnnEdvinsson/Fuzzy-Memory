@@ -1,5 +1,16 @@
-#memory_board{
+@media only screen and (max-width: 768px) {
 
+
+
+.wrapper{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+}
+
+
+#memory_board{
   height:700px;
   width: 700px;
   border-style: solid;
@@ -18,8 +29,8 @@
   border-style: solid;
     border-color: red;
     background-color: pink;
-    position:relative;;
-    transition: all .2s ease;
+    position:relative;
+    transition: all .5s ease;
 }
 
 img {
@@ -27,13 +38,27 @@ position: absolute;
 height: 100%;
 width: 100%;
 opacity: 0;
-transition: 1.2s ease;
+transition: .8s ease;
 pointer-events: none;
 }
 
+.playBtn{
+margin: 1em;
+
+
+}
 
 .clicked {
-  transform: rotate(360deg);
+  -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+
+   transition: .8s;
+    /*pointer-events:none;*/
+    transition: 1s ease-in-out;
+
+  /*transform: rotate(360deg);*/
 pointer-events: none;
 }
 
