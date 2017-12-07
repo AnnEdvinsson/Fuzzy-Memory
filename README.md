@@ -1,6 +1,6 @@
 # The Art Memory
 
-[<img src="img3.jpg" alt="">]
+[](<img src="img/img3.jpg">)
 
 #### a school assignment to create a memory game
 
