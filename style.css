@@ -1,23 +1,16 @@
-@media screen and (max-width:790px){
-  #memory_board{
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  }
-}
-
-.background{
-  /*height: 100%;
-  width:100%;*/
-  background-color: #cfee5f;
 
 
-}
 
 .wrapper{
+  width: 100vw;
+  height: 100vh;
 display: flex;
 /*flex-wrap: wrap;*/
 flex-direction: column;
 justify-content: center;
 align-items: center;
+  background-color: #cfee5f;
+  /*background-size: cover;*/
 }
 
 .header{
@@ -44,6 +37,14 @@ align-items: center;
   grid-template-columns: repeat(4, 24%);
   grid-template-rows: 24% 24% 24% 24%;
   grid-auto-flow: column;
+}
+@media screen and (max-width:500px){
+  #memory_board{
+    /*grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));*/
+
+    width:400px;
+    height: 400px;
+  }
 }
 
 .card{
