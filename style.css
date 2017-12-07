@@ -30,7 +30,8 @@ align-items: center;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin: auto;
+  margin: 0;
+  padding-top: 6px;
 
   display: grid;
   grid-gap: 5px;
@@ -44,7 +45,12 @@ align-items: center;
 
     width:400px;
     height: 400px;
+    padding-top: 0px;
   }
+}
+
+.pointerStop{
+  pointer-events: none;
 }
 
 .card{
