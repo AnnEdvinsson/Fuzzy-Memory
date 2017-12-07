@@ -1,5 +1,7 @@
 # The Art Memory
 
+[<img src="img3.jpg" alt="">]
+
 #### a school assignment to create a memory game
 
 The Art Memory is a classic memory game but with some added art experience for the player.
