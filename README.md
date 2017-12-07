@@ -12,6 +12,9 @@ The game is built in HTML, CSS and JavaScript.
 ## Setup game
 To get started, all you need to do is to clone or download the repository to your computer and open the file index.html in your browser.
 
+## Testers
+
+
 ## License
 MIT
 For more information go to [LICENSE](https://github.com/AnnEdvinsson/Good-News-/blob/master/LICENSE).
