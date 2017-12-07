@@ -32,6 +32,10 @@ let comparefunc = (dataset) => {
   console.log(divArray);
   if(compareArray.length == 2 ) {
     console.log('nu har du tryckt på två kort');
+    memory_board.classList.add('pointerStop');
+    setTimeout(function(){
+      memory_board.classList.remove('pointerStop');
+    }, 1000)
 
     if (compareArray[0]==compareArray[1]) {
       console.log('match');
@@ -51,6 +55,7 @@ let comparefunc = (dataset) => {
         divArray[1].classList.remove('clicked');
         divArray[0].querySelector('img').classList.remove('images_clicked');
         divArray[1].querySelector('img').classList.remove('images_clicked');
+
         compareArray = []; //tömmer arrayen efter valt två kort
         divArray = [];
       }, 1000)
@@ -75,7 +80,7 @@ cards.forEach((cardEach)=> {
     let currentCard = event.target.dataset.card;
     console.log(currentCard);
     let compare = compareArray.push(currentCard); //för att kunna jämföra korten.
-                                                  //först dit jag vill skicka och 
+                                                  //först dit jag vill skicka och
                                                   //inom parates det jag vill skicka
     // console.log(compareArray);
 
