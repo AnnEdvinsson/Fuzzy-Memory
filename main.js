@@ -14,7 +14,7 @@ function resetBoard(){
   cards.forEach(function(card){
     card.querySelector('img').classList.remove('images_clicked');
     card.classList.remove('clicked');
-    console.log(card);
+    // console.log(card);
 
   });
   compareArray = []; //empties the array after picking two cards
@@ -27,18 +27,18 @@ for (var i = memory_board.children.length; i >= 0; i--) {
 
 let comparefunc = (dataset) => {
   // console.log(dataset);
-  console.log(divArray);
+  // console.log(divArray);
   if(compareArray.length == 2 ) {
-    console.log('nu har du tryckt på två kort');
+    // console.log('nu har du tryckt på två kort');
     memory_board.classList.add('pointerStop');
     setTimeout(function(){
       memory_board.classList.remove('pointerStop');
     }, 1000)
 
     if (compareArray[0]==compareArray[1]) {
-      console.log('match');
+      // console.log('match');
       matchPair++; //adds one for each matching pair
-      console.log(matchPair);
+      // console.log(matchPair);
       compareArray = []; //empties the array after picking two cards
       divArray = [];
       if (matchPair == 8) { //when the player found all matching pairs
@@ -63,13 +63,13 @@ cards.forEach((cardEach)=> {
   cardEach.addEventListener('click', (event) => {
     let currentDiv = event.target;
     divArray.push(currentDiv);
-    console.log(currentDiv);
+    // console.log(currentDiv);
     currentDiv.classList.toggle('clicked');
     let currentImg = currentDiv.querySelector('img');
     currentImg.classList.add('images_clicked');
     // console.log(event.target.dataset.card);
     let currentCard = event.target.dataset.card;
-    console.log(currentCard);
+    // console.log(currentCard);
     let compare = compareArray.push(currentCard);
     // console.log(compareArray);
     return comparefunc(currentCard);
