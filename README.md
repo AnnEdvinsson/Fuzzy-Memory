@@ -15,7 +15,7 @@ The game is built in HTML, CSS and JavaScript.
 To get started, all you need to do is to clone or download the repository to your computer and open the file index.html in your browser.
 
 ## Testers
-
+Edvin Wiberg and Kajsa Taipale
 
 ## License
 MIT
